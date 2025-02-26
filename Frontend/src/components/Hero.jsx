@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Travel from "../assets/Travel.webp";
@@ -6,87 +7,41 @@ import Curtains from "../assets/Curtains.webp";
 import Recliner from "../assets/Recliner.webp";
 import Sofa from "../assets/Sofa.webp";
 
-const WheelControls = (slider) => {
-  let touchTimeout;
-  let position = { x: 0, y: 0 };
-  let wheelActive = false;
+const images = [Travel, Chair, Curtains, Recliner, Sofa];
 
-  function dispatch(e, name) {
-    position.x -= e.deltaX;
-    position.y -= e.deltaY;
-    slider.container.dispatchEvent(
-      new CustomEvent(name, {
-        detail: { x: position.x, y: position.y },
-      })
-    );
-  }
-
-  function wheelStart(e) {
-    position = { x: e.pageX, y: e.pageY };
-    dispatch(e, "ksDragStart");
-  }
-
-  function wheel(e) {
-    dispatch(e, "ksDrag");
-  }
-
-  function wheelEnd(e) {
-    dispatch(e, "ksDragEnd");
-  }
-
-  function eventWheel(e) {
-    e.preventDefault();
-    if (!wheelActive) {
-      wheelStart(e);
-      wheelActive = true;
-    }
-    wheel(e);
-    clearTimeout(touchTimeout);
-    touchTimeout = setTimeout(() => {
-      wheelActive = false;
-      wheelEnd(e);
-
-      // **Check if at the last slide and move back to first**
-      if (slider.track.details.rel === slider.track.details.slides.length - 1) {
-        slider.moveToIdx(0, true); // Move to first slide smoothly
-      }
-    }, 50);
-  }
-
-  slider.on("created", () => {
-    slider.container.addEventListener("wheel", eventWheel, { passive: false });
-  });
-};
-
-export default function App() {
-  const [sliderRef] = useKeenSlider(
-    {
-      loop: true, // **Enable infinite scrolling**
-      rubberband: false,
-      vertical: true,
+const Hero = () => {
+  const [opacities, setOpacities] = useState([]);
+  const [sliderRef, instanceRef] = useKeenSlider({
+    slides: images.length,
+    loop: true,
+    detailsChanged(s) {
+      const newOpacities = s.track.details.slides.map((slide) => slide.portion);
+      setOpacities(newOpacities);
     },
-    [WheelControls]
-  );
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (instanceRef.current) {
+        instanceRef.current.next();
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [instanceRef]);
 
   return (
-    <>
-      <div ref={sliderRef} className="keen-slider overflow-hidden" style={{ height: 600 }}>
-        <div className="keen-slider__slide number-slide1">
-          <img src={Travel} alt="Travel" />
+    <div ref={sliderRef} className="relative w-full h-[450px] overflow-hidden">
+      {images.map((src, idx) => (
+        <div
+          key={idx}
+          className="absolute inset-0 w-full h-full transition-opacity duration-500"
+          style={{ opacity: opacities[idx] }}
+        >
+          <img src={src} className="w-full h-full object-cover" alt={`Slide ${idx + 1}`} />
         </div>
-        <div className="keen-slider__slide number-slide2">
-          <img src={Recliner} alt="Recliner" />
-        </div>
-        <div className="keen-slider__slide number-slide3">
-          <img src={Sofa} alt="Sofa" />
-        </div>
-        <div className="keen-slider__slide number-slide4">
-          <img src={Curtains} alt="Curtains" />
-        </div>
-        <div className="keen-slider__slide number-slide5">
-          <img src={Chair} alt="Chair" />
-        </div>
-      </div>
-    </>
+      ))}
+    </div>
   );
-}
+};
+
+export default Hero;

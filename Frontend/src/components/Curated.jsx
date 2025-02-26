@@ -9,7 +9,7 @@ const Curated = () => {
     ];
   
     return (
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mt-14">
         <h1 className="text-3xl font-['Oswald'] text-center mb-8 text-gray-900">Curated Gifts for You</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 h-48">
           {cards.map((card, index) => (
