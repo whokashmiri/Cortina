@@ -23,13 +23,13 @@ export default function Tabs() {
 
           {/* Dropdown */}
           <div
-            className={`absolute left-0 mt-2 rounded-lg shadow-lg w-40 opacity-0 transform scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:scale-100`}
+            className={`absolute left-0 mt-2 rounded-lg shadow-lg w-40 opacity-0 transform scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:scale-100 z-10`}
           >
             {dropdownLinks.map((link, i) => (
               <a
                 key={i}
                 href="#"
-                className="block px-4 py-2 text-black hover:text-accent  justify-between items-center transform transition-all duration-200 hover:scale-105"
+                className="block px-4 py-2 bg-secondary text-black hover:text-accent  justify-between items-center transform transition-all duration-200 hover:scale-105"
               >
                 {link} <span className="opacity-0 transition-opacity duration-200 group-hover:opacity-100">›</span>
               </a>
