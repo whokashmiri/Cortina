@@ -10,7 +10,7 @@ export default function Tabs() {
   const [activeTab, setActiveTab] = useState(null);
 
   return (
-    <div className="  p-4  space-x-6 flex items-center justify-center ">
+    <div className="p-4  space-x-6 flex items-center justify-center ">
       {tabs.map((tab, index) => (
         <div
           key={index}

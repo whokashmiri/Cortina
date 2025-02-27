@@ -1,3 +1,4 @@
+import CardGrid from "./components/CardGrid"
 import Curated from "./components/Curated"
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
@@ -10,6 +11,7 @@ function App() {
 <Tabs/>
 <Hero/>
 <Curated/>
+<CardGrid/>
 </>  
 )
 }
