@@ -5,9 +5,19 @@ import ReclinerCover from "../assets/ReclinerCover.webp"
 import Luggage from "../assets/Luggage.webp"
 import Sofa_Cover from "../assets/Sofa_Cover.webp"
 import styled from 'styled-components';
+import {useEffect} from "react";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+ 
 
 export default function CardGrid() {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
     const cards = [
       { image: Sofa_Blue, title: "HORECA" },
       { image: Chair_Cover, title: "DINING CHAIR COVER" },
@@ -20,7 +30,7 @@ export default function CardGrid() {
     return (
         <div className="mt-9">
           <h1 className="text-3xl font-['Oswald'] text-center mb-8 text-gray-900">Make Your Home Beautiful</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6"  data-aos="fade-up-right">
             {cards.map((card, index) => (
               <div
                 key={index}

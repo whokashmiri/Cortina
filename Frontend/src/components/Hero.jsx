@@ -7,9 +7,20 @@ import Curtains from "../assets/Curtains.webp";
 import Recliner from "../assets/Recliner.webp";
 import Sofa from "../assets/Sofa.webp";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 const images = [Travel, Chair, Curtains, Recliner, Sofa];
 
-const Hero = () => {
+
+ 
+
+export default function Hero() {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
   const [opacities, setOpacities] = useState([]);
   const [sliderRef, instanceRef] = useKeenSlider({
     slides: images.length,
@@ -34,7 +45,7 @@ const Hero = () => {
       {images.map((src, idx) => (
         <div
           key={idx}
-          className="absolute inset-0 w-full h-full transition-opacity duration-500"
+          className="absolute inset-0 w-full h-full transition-opacity duration-500" data-aos="fade-up-right"
           style={{ opacity: opacities[idx] }}
         >
           <img src={src} className="w-full h-full object-cover" alt={`Slide ${idx + 1}`} />
@@ -44,4 +55,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+

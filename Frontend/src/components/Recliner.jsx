@@ -1,48 +1,49 @@
 import { Star } from "lucide-react";
 import styled from 'styled-components';
-import Curtain1 from "../assets/NEW-VELVET-Green.webp"
-import Curtain2 from "../assets/NEW-VELVET-white.webp"
-import Curtain3 from "../assets/NEW-VELVET-White2.webp"
-import Curtain4 from "../assets/NEW-VELVET.webp"
+import Recliner1 from "../assets/Recliner1.webp"
+import Recliner2 from "../assets/Recliner2.webp"
+import Recliner3 from "../assets/Recliner3.webp"
+import Recliner4 from "../assets/Recliner4.webp"
 import {useEffect} from "react";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-const Curtains = () => {
-   useEffect(() => {
-          AOS.init();
-        }, [])
+
+const Recliner = () => {
+    useEffect(() => {
+        AOS.init();
+      }, [])
   const products = [
     {
       id: 1,
-      image: Curtain1,
-      name: "Pack of 2 Velvet Room Darkening Solid Door Curtains- Green",
+      image: Recliner1,
+      name: "Stretchable Jacquard Knitted Recliner Cover- Brown",
       rating: 4,
       price: "$20.00",
       oldPrice: "$30.00",
     },
     {
       id: 2,
-      image: Curtain2,
-      name: "Pack of 2 Velvet Room Darkening Solid Door Curtains- White",
+      image: Recliner2,
+      name: "Stretchable Polyester Printed Recliner Cover",
       rating: 5,
       price: "$25.00",
       oldPrice: "$35.00",
     },
     {
       id: 3,
-      image: Curtain4,
-      name: "Pack of 2 Velvet Room Darkening Solid Door Curtains- Peach",
+      image: Recliner3,
+      name: "Stretchable Polyester Printed Recliner Cover",
       rating: 3,
       price: "$18.00",
       oldPrice: "$28.00",
     },
     {
       id: 4,
-      image: Curtain3,
-      name: "Pack of 2 Velvet Room Darkening Solid Door Curtains- White",
+      image: Recliner4,
+      name: "Stretchable Polyester Printed Recliner Cover",
       rating: 4,
       price: "$22.00",
       oldPrice: "$32.00",
@@ -51,21 +52,21 @@ const Curtains = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-6">
-      <h1 className="text-3xl font-['Oswald'] text-center mb-8 text-gray-900">Elegant Curtains for Living Room</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <h1 className="text-3xl font-['Oswald'] text-center mb-8 text-gray-900">Stretchable & Premium Recliner Chair Covers</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-right">
         {products.map((product) => (
-          <div key={product.id} className="border rounded-lg p-2 shadow-lg bg-white" data-aos="fade-left">
+          <div key={product.id} className="border rounded-xl p-2 shadow-lg bg-white">
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-72 object-cover rounded-md"
+              className="w-full h-72 object-cover rounded-2xl"
             />
             <p className="mt-4 font-serif text-sm">{product.name}</p>
             <div className="flex items-center mt-2">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className={`w-5 h-5 ${i < product.rating ? "text-yellow-400" : "text-gray-300"}`}
+                  className={`w-5 h-5 ${i < product.rating ? "text-yellow-400" : "text-yellow-500"}`}
                 />
               ))}
             </div>
@@ -150,4 +151,4 @@ const StyledWrapper = styled.div`
   transform: translate(0);
 }
 `;
-export default Curtains;
+export default Recliner;

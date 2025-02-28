@@ -1,48 +1,57 @@
 import { Star } from "lucide-react";
 import styled from 'styled-components';
-import Curtain1 from "../assets/NEW-VELVET-Green.webp"
-import Curtain2 from "../assets/NEW-VELVET-white.webp"
-import Curtain3 from "../assets/NEW-VELVET-White2.webp"
-import Curtain4 from "../assets/NEW-VELVET.webp"
+import Luggage1 from "../assets/Luggage1.webp"
+import Luggage2 from "../assets/Luggage2.webp"
+import Luggage3 from "../assets/Luggage3.webp"
+import Luggage4 from "../assets/Luggage4.webp"
 import {useEffect} from "react";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-const Curtains = () => {
-   useEffect(() => {
-          AOS.init();
-        }, [])
+const Luggage = () => {
+  useEffect(() => {
+    AOS.init({ 
+      duration: 1000, 
+      once: false // Ensures animation occurs on every scroll
+    });
+  
+    window.addEventListener('scroll', AOS.refresh);
+  
+    return () => {
+      window.removeEventListener('scroll', AOS.refresh);
+    };
+  }, []);
   const products = [
     {
       id: 1,
-      image: Curtain1,
-      name: "Pack of 2 Velvet Room Darkening Solid Door Curtains- Green",
+      image: Luggage1,
+      name: "Black & Turquoise Printed Medium Luggage Cover",
       rating: 4,
       price: "$20.00",
       oldPrice: "$30.00",
     },
     {
       id: 2,
-      image: Curtain2,
-      name: "Pack of 2 Velvet Room Darkening Solid Door Curtains- White",
+      image: Luggage2,
+      name: "Navy Blue & Brown Printed Large Luggage Cover",
       rating: 5,
       price: "$25.00",
       oldPrice: "$35.00",
     },
     {
       id: 3,
-      image: Curtain4,
-      name: "Pack of 2 Velvet Room Darkening Solid Door Curtains- Peach",
+      image: Luggage3,
+      name: "Navy Blue & Red Printed Large Luggage Cover",
       rating: 3,
       price: "$18.00",
       oldPrice: "$28.00",
     },
     {
       id: 4,
-      image: Curtain3,
-      name: "Pack of 2 Velvet Room Darkening Solid Door Curtains- White",
+      image: Luggage4,
+      name: "Printed Multi-Color Medium Luggage Cover",
       rating: 4,
       price: "$22.00",
       oldPrice: "$32.00",
@@ -51,10 +60,10 @@ const Curtains = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-6">
-      <h1 className="text-3xl font-['Oswald'] text-center mb-8 text-gray-900">Elegant Curtains for Living Room</h1>
+      <h1 className="text-3xl font-['Oswald'] text-center mb-8 text-gray-900">Travel Accessories</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {products.map((product) => (
-          <div key={product.id} className="border rounded-lg p-2 shadow-lg bg-white" data-aos="fade-left">
+          <div key={product.id} className="border rounded-lg p-2 shadow-lg bg-white" data-aos="fade-up">
             <img
               src={product.image}
               alt={product.name}
@@ -65,7 +74,7 @@ const Curtains = () => {
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className={`w-5 h-5 ${i < product.rating ? "text-yellow-400" : "text-gray-300"}`}
+                  className={`w-5 h-5 ${i < product.rating ? "text-yellow-400" : "text-yellow-500"}`}
                 />
               ))}
             </div>
@@ -150,4 +159,4 @@ const StyledWrapper = styled.div`
   transform: translate(0);
 }
 `;
-export default Curtains;
+export default Luggage;
