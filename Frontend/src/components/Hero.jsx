@@ -6,18 +6,10 @@ import Chair from "../assets/Chair.webp";
 import Curtains from "../assets/Curtains.webp";
 import Recliner from "../assets/Recliner.webp";
 import Sofa from "../assets/Sofa.webp";
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-
 const images = [Travel, Chair, Curtains, Recliner, Sofa];
-
-
- 
-
 export default function Hero() {
-
   useEffect(() => {
     AOS.init();
   }, [])
@@ -30,7 +22,6 @@ export default function Hero() {
       setOpacities(newOpacities);
     },
   });
-
   useEffect(() => {
     const interval = setInterval(() => {
       if (instanceRef.current) {
