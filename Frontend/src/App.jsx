@@ -1,9 +1,12 @@
 import CardGrid from "./components/CardGrid"
+import Carousel from "./components/Carousel"
 import Chair from "./components/Chair"
+import CortinaHome from "./components/CortinaHome"
 import Curated from "./components/Curated"
 import Curtains from "./components/Curtains"
 import Featured from "./components/Featured"
 import Hero from "./components/Hero"
+import IconGrid from "./components/IconGrid"
 import Luggage from "./components/Luggage"
 import Navbar from "./components/Navbar"
 import Recliner from "./components/Recliner"
@@ -24,6 +27,9 @@ function App() {
 <Sofa/>
 <Chair/>
 <Featured/>
+<IconGrid/>
+<Carousel/>
+<CortinaHome/>
 </>  
 )
 }
