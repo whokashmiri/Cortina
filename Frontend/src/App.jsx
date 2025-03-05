@@ -23,12 +23,13 @@ function App() {
 <CardGrid/>
 <Carousel/>
 <Chair/>
-{/* <Curtains/> */}
+<Featured/>
+
 {/* <Luggage/>
 <Recliner/>
 <Sofa/>
 
-<Featured/>
+
 <IconGrid/>
 
 <CortinaHome/> */}

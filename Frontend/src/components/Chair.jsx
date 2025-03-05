@@ -62,7 +62,7 @@ const Chair = () => {
               />
             )}
             {/* Overlay revealed on hover */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-black bg-opacity-70 flex flex-col justify-center p-4 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out">
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-black bg-opacity-60 flex flex-col justify-center p-4 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out">
               <p className="text-white font-serif text-sm">{product.name}</p>
               <div className="flex items-center mt-2">
                 {[...Array(5)].map((_, i) => (
