@@ -53,7 +53,7 @@ export default function Featured() {
                 />
               )}
             </div>
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-black bg-opacity-60 flex flex-col justify-center p-4 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out">
+            <div className="absolute top-0 right-0 w-full h-1/2 bg-black bg-opacity-60 flex flex-col justify-center p-4 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out">
               <h3 className="text-lg text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">{card.title}</h3>
               <p className="text-sm text-white  mt-2 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {card.description}

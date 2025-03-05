@@ -23,6 +23,7 @@ function App() {
 <CardGrid/>
 <Carousel/>
 <Chair/>
+<Curtains/>
 <Featured/>
 
 {/* <Luggage/>
