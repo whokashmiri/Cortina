@@ -21,14 +21,16 @@ function App() {
 <Hero/>
 <Curated/>
 <CardGrid/>
+<Carousel/>
+<Chair/>
 {/* <Curtains/> */}
 {/* <Luggage/>
 <Recliner/>
 <Sofa/>
-<Chair/>
+
 <Featured/>
 <IconGrid/>
-<Carousel/>
+
 <CortinaHome/> */}
 </>  
 )

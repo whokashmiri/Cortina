@@ -18,22 +18,22 @@ export default function CardGrid() {
       {/* First div with a single image */}
       <div>
         <img 
-          src="https://images.pexels.com/photos/4112235/pexels-photo-4112235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+          src="https://images.pexels.com/photos/2227838/pexels-photo-2227838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
           alt="Main" 
-          className="w-full h-full object-cover rounded-lg"
+          className="w-full h-[100vh] object-cover rounded-lg"
         />
       </div>
       {/* Second div with two stacked images */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 justify-center">
         <img 
           src="https://images.pexels.com/photos/106936/pexels-photo-106936.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
           alt="Top" 
-          className="w-full h-1/2 object-cover rounded-lg"
+          className="w-full h-[45vh]  object-cover rounded-lg"
         />
         <img 
-          src="https://images.pexels.com/photos/1248582/pexels-photo-1248582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+          src="https://images.pexels.com/photos/17390532/pexels-photo-17390532/free-photo-of-yellow-wooden-armchair-on-sunlit-lawn.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
           alt="Bottom" 
-          className="w-full h-1/2 object-cover rounded-lg"
+          className="w-full h-[40vh] object-cover rounded-lg"
         />
       </div>
     </div>

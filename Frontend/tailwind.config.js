@@ -12,6 +12,7 @@ export default {
         accent: "#A31621", // red accent
         background: "#FCF7F8", // background
         text: "#90C2E7", // Dark text
+        btn: "#1f5555"
       },
     },
   },

@@ -2,16 +2,7 @@
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import { useEffect } from "react"
-import one from "../assets/1.webp"
-import two from "../assets/2.webp"
-import three from "../assets/3.webp"
-import four from "../assets/4.webp"
-import five from "../assets/5.webp"
-import six from "../assets/6.webp"
-import seven from "../assets/7.webp"
-import eight from "../assets/8.webp"
-import nine from "../assets/9.webp"
-import ten from "../assets/10.webp"
+
 
 const Carousel = () => {
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -32,41 +23,53 @@ const Carousel = () => {
   }, [instanceRef])
 
   return (
+    <div>
     <div className="mt-9">
-        <h1 className="text-3xl font-['Oswald'] text-center mb-8 text-gray-900">Shop by Inspirations</h1>
+        <h1 className="text-6xl font-bold text-center m-12 text-gray-900">Shop by   <span className="text-teal-800 font-light"> Inspirations</span> </h1>
     
     <div ref={sliderRef} className="keen-slider">
       <div className="keen-slider__slide number-slide1">
-        <img src={one} alt="" className="rounded-2xl" />
+        <img src="https://images.pexels.com/photos/279640/pexels-photo-279640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
       </div>
       <div className="keen-slider__slide number-slide2">
-        <img src={two} alt="" className="rounded-2xl" />
+        <img src="https://images.pexels.com/photos/3034738/pexels-photo-3034738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
       </div>
       <div className="keen-slider__slide number-slide3">
-        <img src={three} alt="" className="rounded-2xl" />
+        <img src="https://images.pexels.com/photos/2724373/pexels-photo-2724373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
       </div>
       <div className="keen-slider__slide number-slide4">
-        <img src={four} alt="" className="rounded-2xl" />
-      </div>
-      <div className="keen-slider__slide number-slide5">      
-        <img src={five} alt="" className="rounded-2xl" />
-      </div>
-      <div className="keen-slider__slide number-slide6">
-        <img src={six} alt="" className="rounded-2xl" />
-      </div>
-      <div className="keen-slider__slide number-slide7">
-        <img src={seven} alt="" className="rounded-2xl" />
-      </div>
-      <div className="keen-slider__slide number-slide8">
-        <img src={eight} alt="" className="rounded-2xl" />
+        <img src="https://images.pexels.com/photos/1103808/pexels-photo-1103808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
       </div>
       <div className="keen-slider__slide number-slide9">
-        <img src={nine} alt="" className="rounded-2xl" />
+        <img src="https://images.pexels.com/photos/19050708/pexels-photo-19050708/free-photo-of-windows-in-urban-apartment.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
       </div>
+      <div className="keen-slider__slide number-slide5">      
+        <img src="https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
+      </div>
+      <div className="keen-slider__slide number-slide6">
+        <img src="https://images.pexels.com/photos/30841382/pexels-photo-30841382/free-photo-of-cozy-cafe-overlooking-istanbul-s-scenic-park.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
+      </div>
+      <div className="keen-slider__slide number-slide7">
+        <img src="https://images.pexels.com/photos/7407771/pexels-photo-7407771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
+      </div>
+      <div className="keen-slider__slide number-slide8">
+        <img src="https://images.pexels.com/photos/6598909/pexels-photo-6598909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
+      </div>
+    
       <div className="keen-slider__slide number-slide10">
-        <img src={ten} alt="" className="rounded-2xl" />
+        <img src="https://images.pexels.com/photos/7746617/pexels-photo-7746617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
       </div>
     </div>
+
+    
+    </div>
+    <div className="flex gap-4 justify-center mt-6">
+          <button className="bg-btn text-white px-9 py-4 rounded-full font-semibold transition duration-300 hover:bg-yellow-600 flex items-center">
+            View Products
+          </button>
+         
+        </div>
+
     </div>
   )
 }
