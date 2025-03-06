@@ -31,7 +31,7 @@ const cards = [
 export default function Featured() {
   return (
     <div>
-      <h1 className="text-6xl font-bold text-center mb-8 text-gray-900">
+      <h1 className="text-4xl font-bold text-center mb-8 text-gray-900">
         The Featured Products:<span className="text-teal-800 font-light">A Showcase of Elegance and Innovation
 
 </span>

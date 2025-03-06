@@ -21,7 +21,9 @@ function App() {
 <Tabs/>
 <Hero/>
 <Curated/>
+<IconGrid/>
 <CardGrid/>
+<Luggage/>
 <Carousel/>
 <Chair/>
 <Curtains/>

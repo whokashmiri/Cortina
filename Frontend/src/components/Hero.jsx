@@ -1,5 +1,8 @@
+import bg from "../assets/bg-pf.webp"
+
 export default function Hero() {
   return (
+    <div>
     <div className="relative w-full h-screen bg-cover bg-center flex items-center text-left px-10" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
       <div className="max-w-2xl  p-8 rounded-lg">
         <h1 className=" text-white text-4xl md:text-6xl font-bold mb-4">Where Imagination <br />Meets Interior Design</h1>
@@ -14,6 +17,8 @@ export default function Hero() {
           </button>
         </div>
       </div>
+    </div >
+    <img className="mt-8" src={bg} alt=""  />
     </div>
   );
 }

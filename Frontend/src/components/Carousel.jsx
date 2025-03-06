@@ -1,82 +1,51 @@
-/* eslint-disable react-refresh/only-export-components */
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
-import { useEffect } from "react"
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import { useEffect } from "react";
 
-
-const Carousel = () => {
-  const [sliderRef, instanceRef] = useKeenSlider({
+export default function Carousel() {
+  const [sliderRef, slider] = useKeenSlider({
     loop: true,
-    mode: "free",
-    slides: {
-      perView: 3,
-      spacing: 15,
-    },
-  })
-   useEffect(() => {
-        AOS.init();
-      }, []);
+    duration: 5, // Transition speed (5ms)
+  });
 
   useEffect(() => {
-    if (!instanceRef.current) return
     const interval = setInterval(() => {
-      instanceRef.current?.next()
-    }, 2000) // Auto-slide every 2 seconds
-    return () => clearInterval(interval)
-  }, [instanceRef])
+      slider.current?.next();
+    }, 1500); // Stay on each image for 1.5 seconds
+
+    return () => clearInterval(interval);
+  }, [slider]);
 
   return (
     <div>
-    <div className="mt-9">
-        <h1 className="text-6xl font-bold text-center m-12 text-gray-900">Shop by Inspirations:   <span className="text-teal-800 font-light"> Curated Elegance, Timeless Style</span> </h1>
-    
-    <div ref={sliderRef} className="keen-slider"  data-aos="fade-down-right">
-      <div className="keen-slider__slide number-slide1">
-        <img src="https://images.pexels.com/photos/279640/pexels-photo-279640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
-      </div>
-      <div className="keen-slider__slide number-slide2">
-        <img src="https://images.pexels.com/photos/3034738/pexels-photo-3034738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
-      </div>
-      <div className="keen-slider__slide number-slide3">
-        <img src="https://images.pexels.com/photos/2724373/pexels-photo-2724373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
-      </div>
-      <div className="keen-slider__slide number-slide4">
-        <img src="https://images.pexels.com/photos/1103808/pexels-photo-1103808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
-      </div>
-      <div className="keen-slider__slide number-slide9">
-        <img src="https://images.pexels.com/photos/19050708/pexels-photo-19050708/free-photo-of-windows-in-urban-apartment.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
-      </div>
-      <div className="keen-slider__slide number-slide5">      
-        <img src="https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
-      </div>
-      <div className="keen-slider__slide number-slide6">
-        <img src="https://images.pexels.com/photos/30841382/pexels-photo-30841382/free-photo-of-cozy-cafe-overlooking-istanbul-s-scenic-park.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
-      </div>
-      <div className="keen-slider__slide number-slide7">
-        <img src="https://images.pexels.com/photos/7407771/pexels-photo-7407771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
-      </div>
-      <div className="keen-slider__slide number-slide8">
-        <img src="https://images.pexels.com/photos/6598909/pexels-photo-6598909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
-      </div>
-    
-      <div className="keen-slider__slide number-slide10">
-        <img src="https://images.pexels.com/photos/7746617/pexels-photo-7746617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
-      </div>
-    </div>
+              <h1 className="text-4xl font-bold text-center m-12 text-gray-900">Shop by Inspirations:   <span className="text-teal-800 font-light"> Curated Elegance, Timeless Style</span> </h1>
 
-    
-    </div>
-    <div className="flex gap-4 justify-center mt-6">
+      <div ref={sliderRef} className="keen-slider w-[90%] h-[90vh] ">
+        <div className="keen-slider__slide number-slide1 p-6  bg-contain">
+          <img className="rounded-2xl bg-center" src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
+        </div>
+        <div className="keen-slider__slide number-slide2 p-6 bg-contain">
+          <img className="rounded-2xl bg-center" src="https://images.pexels.com/photos/6232449/pexels-photo-6232449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
+        </div>
+        <div className="keen-slider__slide number-slide3 p-6 bg-contain">
+          <img  className="rounded-2xl bg-center" src="https://images.pexels.com/photos/27208616/pexels-photo-27208616/free-photo-of-ceramic-vases-for-soy-candles.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
+        </div>
+        <div className="keen-slider__slide number-slide4 p-6 bg-contain">
+          <img className="rounded-2xl bg-center" src="https://images.pexels.com/photos/5546812/pexels-photo-5546812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
+        </div>
+        <div className="keen-slider__slide number-slide5 p-6 bg-contain">
+          <img className="rounded-2xl bg-center" src="https://images.pexels.com/photos/271795/pexels-photo-271795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
+        </div>
+        <div className="keen-slider__slide number-slide6 p-6 bg-contain">
+          <img className="rounded-2xl bg-center" src="https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg" alt="" />
+        </div>
+      </div>
+      <div className="flex gap-4 justify-center mt-6">
           <button className="bg-btn text-white px-9 py-4 rounded-full font-semibold transition duration-300 hover:bg-yellow-600 flex items-center">
             View Products
           </button>
          
         </div>
-
     </div>
-  )
+  );
 }
-
-export default Carousel;
