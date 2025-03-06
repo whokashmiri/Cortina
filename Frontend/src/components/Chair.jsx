@@ -44,16 +44,16 @@ const Chair = () => {
   return (
     <div className="max-w-6xl mx-auto p-6">
       <h1 className="text-6xl font-bold text-center mb-8 text-gray-900">
-        The Chairs Of <span className="text-teal-800 font-light">Future</span>
+      The Chairs of the Future: <span className="text-teal-800 font-light">Where Elegance Meets Innovation</span>
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="flip-up">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up">
         {products.map((product) => (
           <div key={product.id} className="relative group border rounded-xl overflow-hidden shadow-lg">
             {product.type === 'video' ? (
               <video autoPlay loop muted className="w-full h-96 object-cover">
-                <source src={product.video} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <source src="https://videos.pexels.com/video-files/30945038/13231631_1440_2560_25fps.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             ) : (
               <img
                 src={product.image}

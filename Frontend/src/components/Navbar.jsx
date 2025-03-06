@@ -1,5 +1,5 @@
 import { Search, ShoppingCart , User } from "lucide-react";
-import logo from "../assets/cortinalogo.avif"
+import logo from "../assets/cortinalogo.png"
 
 export default function Navbar() {
   return (
@@ -12,8 +12,9 @@ export default function Navbar() {
       </div>
 
           {/* Logo Section */}
-          <div className="text-xl font-bold ">
-        <img className="h-10" src={logo} alt="" />
+          <div className="text-xl font-bold flex flex-row">
+        <img className="h-16" src={logo} alt="" />
+        <h1 className="text-4xl text-btn mt-4">LuxKash</h1>
       </div>
 
      

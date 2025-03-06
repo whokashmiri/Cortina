@@ -16,6 +16,7 @@ import  Tabs  from "./components/Tabs"
 function App() {
   return (
 <>
+<div className="overflow-x-hidden">
 <Navbar/>
 <Tabs/>
 <Hero/>
@@ -24,16 +25,12 @@ function App() {
 <Carousel/>
 <Chair/>
 <Curtains/>
+<Sofa/>
+<Recliner/>
 <Featured/>
 
-{/* <Luggage/>
-<Recliner/>
-<Sofa/>
-
-
-<IconGrid/>
-
-<CortinaHome/> */}
+<CortinaHome/>
+</div>
 </>  
 )
 }

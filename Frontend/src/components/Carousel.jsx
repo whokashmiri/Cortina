@@ -2,6 +2,8 @@
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import { useEffect } from "react"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Carousel = () => {
@@ -13,6 +15,9 @@ const Carousel = () => {
       spacing: 15,
     },
   })
+   useEffect(() => {
+        AOS.init();
+      }, []);
 
   useEffect(() => {
     if (!instanceRef.current) return
@@ -25,9 +30,9 @@ const Carousel = () => {
   return (
     <div>
     <div className="mt-9">
-        <h1 className="text-6xl font-bold text-center m-12 text-gray-900">Shop by   <span className="text-teal-800 font-light"> Inspirations</span> </h1>
+        <h1 className="text-6xl font-bold text-center m-12 text-gray-900">Shop by Inspirations:   <span className="text-teal-800 font-light"> Curated Elegance, Timeless Style</span> </h1>
     
-    <div ref={sliderRef} className="keen-slider">
+    <div ref={sliderRef} className="keen-slider"  data-aos="fade-down-right">
       <div className="keen-slider__slide number-slide1">
         <img src="https://images.pexels.com/photos/279640/pexels-photo-279640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="rounded-2xl" />
       </div>

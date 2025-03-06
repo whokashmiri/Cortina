@@ -20,7 +20,7 @@ export default function CardGrid() {
         <img 
           src="https://images.pexels.com/photos/2227838/pexels-photo-2227838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
           alt="Main" 
-          className="w-full h-[100vh] object-cover rounded-lg"
+          className="w-full h-[100vh] object-cover rounded-lg" data-aos="fade-right"
         />
       </div>
       {/* Second div with two stacked images */}
@@ -28,12 +28,12 @@ export default function CardGrid() {
         <img 
           src="https://images.pexels.com/photos/106936/pexels-photo-106936.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
           alt="Top" 
-          className="w-full h-[45vh]  object-cover rounded-lg"
+          className="w-full h-[45vh]  object-cover rounded-lg" data-aos="fade-up"
         />
         <img 
           src="https://images.pexels.com/photos/17390532/pexels-photo-17390532/free-photo-of-yellow-wooden-armchair-on-sunlit-lawn.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
           alt="Bottom" 
-          className="w-full h-[40vh] object-cover rounded-lg"
+          className="w-full h-[40vh] object-cover rounded-lg" data-aos="fade-down"
         />
       </div>
     </div>

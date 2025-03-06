@@ -24,7 +24,7 @@ const cards = [
     title: "Scalable Architecture",
     description: "Building solutions that grow with your needs.",
     image: "https://images.pexels.com/photos/27471032/pexels-photo-27471032/free-photo-of-code-ca243-and-link-in-bio-blossoms-as-lively-as-summer-decorative-throw-blankets-for-sofa.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    size: "h-96"
+    size: "h-96 "
   },
 ];
 
@@ -32,13 +32,15 @@ export default function Featured() {
   return (
     <div>
       <h1 className="text-6xl font-bold text-center mb-8 text-gray-900">
-        The Featured <span className="text-teal-800 font-light">Products</span>
+        The Featured Products:<span className="text-teal-800 font-light">A Showcase of Elegance and Innovation
+
+</span>
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
         {cards.map((card, index) => (
           <motion.div
             key={index}
-            className={`relative group overflow-hidden rounded-2xl shadow-lg bg-white cursor-pointer ${card.size}`}
+            className={`relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer ${card.size}`}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
