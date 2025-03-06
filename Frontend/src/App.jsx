@@ -1,8 +1,9 @@
+import Banner from "./components/Banner"
+import Banner2 from "./components/Banner2"
 import CardGrid from "./components/CardGrid"
 import Carousel from "./components/Carousel"
 import Chair from "./components/Chair"
 import CortinaHome from "./components/CortinaHome"
-import Curated from "./components/Curated"
 import Curtains from "./components/Curtains"
 import Featured from "./components/Featured"
 import Hero from "./components/Hero"
@@ -27,8 +28,10 @@ function App() {
 <Carousel/>
 <Chair/>
 <Curtains/>
+<Banner/>
 <Sofa/>
 <Recliner/>
+<Banner2/>
 <Featured/>
 
 <CortinaHome/>

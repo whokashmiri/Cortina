@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Combine, Diamond,  ExpandIcon } from "lucide-react";
+import { Combine, Diamond,  ExpandIcon, ShoppingBasketIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const productsData = {
@@ -39,22 +39,26 @@ const ProductModal = ({ title, products, onClose }) => {
   }, []);
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-    <div className="bg-slate-300 rounded-lg p-3 w-full max-w-2xl h-[80vh] overflow-hidden">
+    <div className="bg-slate-300 rounded-lg p-3 w-full max-w-2xl h-[80vh] overflow-hidden ">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-bold">{title}</h2>
         <button onClick={onClose} className="text-gray-700 hover:text-red-500 text-2xl">
           &times;
         </button>
       </div>
-      <div className="h-[calc(100%-3rem)] overflow-y-auto grid grid-cols-3 gap-4">
+      <div className="h-[calc(100%-3rem)] overflow-y-auto grid grid-cols-3 gap-4 scrollbar-hidden">
         {products.map((product) => (
-          <div key={product.id} className="border p-4 rounded-lg shadow-md flex flex-col items-center">
+          <div key={product.id} className="border p-1 rounded-lg shadow-md flex flex-col items-center">
             <img src={product.img} alt={product.name} className="w-full h-48 object-cover rounded-lg mb-2" />
-            <h3 className="text-lg font-semibold">{product.name}</h3>
-            <p className="text-gray-700">{product.price}</p>
-            <button className="mt-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">
-              Add to Cart
+            <h3 className="text-lg font-sm">{product.name}</h3>
+            <div className="flex  flex-row">
+            <p className="text-black">{product.price}</p>
+            <button className="ml-3 ">
+              <ShoppingBasketIcon className="text-yellow-400 stroke-btn"/>
             </button>
+
+            </div>
+            
           </div>
         ))}
       </div>
