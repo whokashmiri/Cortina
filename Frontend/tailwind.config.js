@@ -6,6 +6,15 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        marquee: "marquee 10s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0%)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
       colors: {
         primary: "#4E8098", // Example dark blue
         secondary: "#CED3DC", // Grayish blue

@@ -20,7 +20,7 @@ function App() {
 <Navbar/>
 <Tabs/>
 <Hero/>
-<Curated/>
+{/* <Curated/> */}
 <IconGrid/>
 <CardGrid/>
 <Luggage/>

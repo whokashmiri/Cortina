@@ -1,5 +1,5 @@
 import bg from "../assets/bg-pf.webp"
-
+import { Star } from "lucide-react";
 export default function Hero() {
   return (
     <div>
@@ -18,7 +18,20 @@ export default function Hero() {
         </div>
       </div>
     </div >
-    <img className="mt-8" src={bg} alt=""  />
+
+    <div className="overflow-hidden  py-2 relative w-full">
+      <div className="flex animate-marquee whitespace-nowrap">
+        <div className="flex min-w-full">
+          {[...Array(20)].map((_, index) => (
+            <span key={index} className="flex items-center text-btn text-lg font-semibold mx-4">
+              <Star className="text-yellow-400 stroke-yellow-500 fill-yellow-500 mx-2" />
+              AMAZING DEALS COMING SOON
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+    <img className="" src={bg} alt=""  />
     </div>
   );
 }
