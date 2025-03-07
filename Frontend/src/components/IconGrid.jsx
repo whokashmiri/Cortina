@@ -49,7 +49,7 @@ const ProductModal = ({ title, products, onClose }) => {
       <div className="h-[calc(100%-3rem)] overflow-y-auto grid grid-cols-3 gap-4 scrollbar-hidden">
         {products.map((product) => (
           <div key={product.id} className="border p-1 rounded-lg shadow-md flex flex-col items-center">
-            <img src={product.img} alt={product.name} className="w-full h-48 object-cover rounded-lg mb-2" />
+            <img src={product.img} alt={product.name} className="w-full h-56 object-cover rounded-lg mb-1" />
             <h3 className="text-lg font-sm">{product.name}</h3>
             <div className="flex  flex-row">
             <p className="text-black">{product.price}</p>
