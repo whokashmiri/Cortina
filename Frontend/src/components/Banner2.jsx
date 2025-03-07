@@ -1,5 +1,12 @@
 import banner1 from "../assets/home_decor_desk.webp"
+import {useEffect} from "react";
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Banner2 = () => {
+   useEffect(() => {
+        AOS.init();
+      }, [])
     return (
       <div className="flex flex-col md:flex-row w-full gap-4 p-4">
         {/* First Image */}
@@ -7,7 +14,7 @@ const Banner2 = () => {
           <img
             src={banner1}
             alt="Banner 1"
-            className="w-full h-full object-contain rounded-lg shadow-lg"
+            className="w-full h-full object-contain rounded-lg shadow-lg" data-aos="fade-up-right"
           />
         </div>
         

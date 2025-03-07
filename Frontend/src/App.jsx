@@ -26,7 +26,6 @@ function App() {
 <Navbar/>
 <Tabs/>
 <Hero/>
-{/* <Curated/> */}
 <IconGrid/>
 <Products/>
 <CardGrid/>
