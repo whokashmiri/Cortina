@@ -17,11 +17,12 @@ import  Quick  from "./components/Quick"
 import Recliner from "./components/Recliner"
 import Sofa from "./components/Sofa"
 import  Tabs  from "./components/Tabs"
+import Video from "./components/Video"
 
 function App() {
   return (
 <>
-<div className="overflow-x-hidden">
+<div className="overflow-x-hidden scrollbar-hidden">
   <Quick/>
 <Navbar/>
 <Tabs/>
@@ -32,6 +33,7 @@ function App() {
 <Luggage/>
 <Carousel/>
 <Chair/>
+<Video/>
 <Curtains/>
 <Banner/>
 <Sofa/>
