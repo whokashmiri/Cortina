@@ -1,142 +1,74 @@
 /* eslint-disable react/prop-types */
-import { Combine, Diamond,  ExpandIcon, ShoppingBasketIcon } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Combine, Diamond, ExpandIcon, ShoppingBasketIcon, Star } from "lucide-react";
+import { useState } from "react";
 
 const productsData = {
   BestSellers: [
-    { id: 1, name: "Product 1", price: "$50", img: "https://images.pexels.com/photos/1099816/pexels-photo-1099816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 2, name: "Product 2", price: "$60", img: "https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 3, name: "Product 3", price: "$70", img: "https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 4, name: "Product 4", price: "$80", img: "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 5, name: "Product 5", price: "$90", img: "https://images.pexels.com/photos/298842/pexels-photo-298842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 6, name: "Product 6", price: "$100", img: "https://images.pexels.com/photos/1743227/pexels-photo-1743227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 7, name: "Product 7", price: "$110", img: "https://images.pexels.com/photos/1080719/pexels-photo-1080719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { id: 1, name: "Product 1", description:"Mirror, 18x21 cm 10 pack (7 1/8x8 1/4  10 pack", price: "$50", img: "https://images.pexels.com/photos/4048672/pexels-photo-4048672.jpeg" },
+    { id: 2, name: "Product 2", price: "$60", img: "https://images.pexels.com/photos/8022977/pexels-photo-8022977.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 3, name: "Product 3", price: "$70", img: "https://images.pexels.com/photos/30818059/pexels-photo-30818059/free-photo-of-two-people-sharing-gourmet-meal-at-cafe-table.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 4, name: "Product 4", price: "$80", img: "https://images.pexels.com/photos/8290032/pexels-photo-8290032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 5, name: "Product 5", price: "$90", img: "https://images.pexels.com/photos/30888208/pexels-photo-30888208/free-photo-of-cozy-morning-with-latte-art-and-newspaper.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 6, name: "Product 6", price: "$100", img: "https://images.pexels.com/photos/30734874/pexels-photo-30734874/free-photo-of-charming-outdoor-restaurant-at-twilight.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 7, name: "Product 7", price: "$110", img: "https://images.pexels.com/photos/30875287/pexels-photo-30875287/free-photo-of-dreamy-portrait-of-woman-with-abstract-colors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
   ],
   NewArrivals: [
-    { id: 8, name: "New Item 1", price: "$40", img: "https://images.pexels.com/photos/1046639/pexels-photo-1046639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 9, name: "New Item 2", price: "$45", img: "https://images.pexels.com/photos/2724748/pexels-photo-2724748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 10, name: "New Item 3", price: "$55", img: "https://images.pexels.com/photos/163046/welcome-to-our-home-welcome-tablet-an-array-of-163046.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 11, name: "New Item 4", price: "$65", img: "https://images.pexels.com/photos/1173651/pexels-photo-1173651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 12, name: "New Item 5", price: "$75", img: "https://images.pexels.com/photos/3797991/pexels-photo-3797991.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 13, name: "New Item 6", price: "$85", img: "https://images.pexels.com/photos/1148450/pexels-photo-1148450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { id: 8, name: "New Item 1", price: "$40", img: "https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 9, name: "New Item 2", price: "$45", img: "https://images.pexels.com/photos/462235/pexels-photo-462235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 10, name: "New Item 3", price: "$55", img: "https://images.pexels.com/photos/31018111/pexels-photo-31018111/free-photo-of-vibrant-yellow-daffodils-in-a-glass-vase.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 11, name: "New Item 4", price: "$65", img: "https://images.pexels.com/photos/31062844/pexels-photo-31062844/free-photo-of-vibrant-abstract-blue-and-orange-fluid-art.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 12, name: "New Item 5", price: "$75", img: "https://images.pexels.com/photos/1125136/pexels-photo-1125136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 13, name: "New Item 6", price: "$85", img: "https://images.pexels.com/photos/30993583/pexels-photo-30993583/free-photo-of-vibrant-red-tulips-in-glass-vase-on-pastel-table.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
   ],
   Exclusive: [
-    { id: 14, name: "Exclusive 1", price: "$200", img: "https://images.pexels.com/photos/1543447/pexels-photo-1543447.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 15, name: "Exclusive 2", price: "$220", img: "https://images.pexels.com/photos/4440220/pexels-photo-4440220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 16, name: "Exclusive 3", price: "$240", img: "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 17, name: "Exclusive 4", price: "$260", img: "https://images.pexels.com/photos/4112237/pexels-photo-4112237.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 18, name: "Exclusive 5", price: "$280", img: "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: 19, name: "Exclusive 6", price: "$300", img: "https://images.pexels.com/photos/1510173/pexels-photo-1510173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { id: 14, name: "Exclusive 1", price: "$200", img: "https://images.pexels.com/photos/31045613/pexels-photo-31045613/free-photo-of-charming-kitchen-with-cat-and-open-shelves.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 15, name: "Exclusive 2", price: "$220", img: "https://images.pexels.com/photos/1008692/pexels-photo-1008692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 16, name: "Exclusive 3", price: "$240", img: "https://images.pexels.com/photos/533157/pexels-photo-533157.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 17, name: "Exclusive 4", price: "$260", img: "https://images.pexels.com/photos/31058475/pexels-photo-31058475/free-photo-of-elegant-indoor-setting-with-art-and-floral-arrangement.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 18, name: "Exclusive 5", price: "$280", img: "https://images.pexels.com/photos/7552373/pexels-photo-7552373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 19, name: "Exclusive 6", price: "$300", img: "https://images.pexels.com/photos/31043486/pexels-photo-31043486/free-photo-of-modern-indoor-plant-in-stylish-pot-on-countertop.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
   ],
-};
-
-const ProductModal = ({ title, products, onClose }) => {
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-    <div className="bg-slate-300 rounded-lg p-3 w-full max-w-2xl h-[80vh] overflow-hidden ">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">{title}</h2>
-        <button onClick={onClose} className="text-gray-700 hover:text-red-500 text-2xl">
-          &times;
-        </button>
-      </div>
-      <div className="h-[calc(100%-3rem)] overflow-y-auto grid grid-cols-3 gap-4 scrollbar-hidden">
-        {products.map((product) => (
-          <div key={product.id} className="border p-1 rounded-lg shadow-md flex flex-col items-center">
-            <img src={product.img} alt={product.name} className="w-full h-56 object-cover rounded-lg mb-1" />
-            <h3 className="text-lg font-sm">{product.name}</h3>
-            <div className="flex  flex-row">
-            <p className="text-black">{product.price}</p>
-            <button className="ml-3 ">
-              <ShoppingBasketIcon className="text-yellow-400 stroke-btn"/>
-            </button>
-
-            </div>
-            
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-  );
 };
 
 export default function IconGrid() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("BestSellers");
 
-  const openModal = (category) => {
-    setSelectedCategory(category);
-  };
-
-  const closeModal = () => {
-    setSelectedCategory(null);
-  };
   return (
     <div className="flex flex-col items-center justify-center gap-8 p-8 bg-gray-100">
-      {/* First Div - Three Centered Buttons */}
-      <div className="flex gap-6">
-      <button
-        className="flex items-center gap-2 px-8 py-3 text-lg font-semibold border-2 border-black rounded-full hover:cursor-pointer"
-        onClick={() => openModal("BestSellers")}
-      >
-        <Diamond className="text-yellow-400 stroke-yellow-500 " /> Best Sellers
+    <div className="flex gap-6">
+      <button className={`flex items-center gap-2 px-8 py-3 text-lg font-semibold border-2 rounded-full ${selectedCategory === "BestSellers" ? "bg-black text-white" : "border-black"}`} onClick={() => setSelectedCategory("BestSellers")}>
+        <Diamond className="text-yellow-400 stroke-yellow-500" /> Best Sellers
       </button>
-      <button
-        className="flex items-center gap-2 px-8 py-3 text-lg font-semibold border-2 border-black rounded-full hover:cursor-pointer"
-        onClick={() => openModal("NewArrivals")}
-      >
+      <button className={`flex items-center gap-2 px-8 py-3 text-lg font-semibold border-2 rounded-full ${selectedCategory === "NewArrivals" ? "bg-black text-white" : "border-black"}`} onClick={() => setSelectedCategory("NewArrivals")}>
         <Combine className="text-yellow-400 stroke-yellow-500" /> New Arrivals
       </button>
-      <button
-        className="flex items-center gap-2 px-8 py-3 text-lg font-semibold border-2 border-black rounded-full hover:cursor-pointer"
-        onClick={() => openModal("Exclusive")}
-      >
+      <button className={`flex items-center gap-2 px-8 py-3 text-lg font-semibold border-2 rounded-full ${selectedCategory === "Exclusive" ? "bg-black text-white" : "border-black"}`} onClick={() => setSelectedCategory("Exclusive")}>
         <ExpandIcon className="text-yellow-400 stroke-yellow-500" /> Exclusive
       </button>
-
-      {selectedCategory && (
-        <ProductModal
-          title={selectedCategory.replace(/([A-Z])/g, " $1")} // Format title
-          products={productsData[selectedCategory]}
-          onClose={closeModal}
-        />
-      )}
     </div>
 
-      {/* Second Div - 6 Buttons (3 per row) */}
-      <div className="grid grid-cols-3 gap-6">
-  <button className="flex items-center gap-2 px-16 py-5 text-lg font-semibold border-2 border-slate-400 rounded-3xl outline-none hover:cursor-pointer">
-    <img className="w-10 h-10 rounded-full" src="https://images.pexels.com/photos/910458/pexels-photo-910458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Icon 1" />
-    <span className="text-gray-700 font-medium">Option 1</span>
-  </button>
-  <button className="flex items-center gap-2 px-16 py-5 text-lg font-semibold border-2 border-slate-400 rounded-3xl outline-none hover:cursor-pointe">
-    <img className="w-10 h-10 rounded-full" src="https://images.pexels.com/photos/30969443/pexels-photo-30969443/free-photo-of-elegant-woven-baskets-with-abstract-patterns.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Icon 2" />
-    <span className="text-gray-700 font-medium">Option 2</span>
-  </button>
-  <button className="flex items-center gap-2 px-16 py-5 text-lg font-semibold border-2 border-slate-400 rounded-3xl outline-none hover:cursor-pointe">
-    <img className="w-10 h-10 rounded-full" src="https://images.pexels.com/photos/383568/pexels-photo-383568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Icon 3" />
-    <span className="text-gray-700 font-medium">Option 3</span>
-  </button>
-  <button className="flex items-center gap-2 px-16 py-5 text-lg font-semibold border-2 border-slate-400 rounded-3xl outline-none hover:cursor-pointe">
-    <img className="w-10 h-10 rounded-full" src="https://images.pexels.com/photos/5546812/pexels-photo-5546812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Icon 4" />
-    <span className="text-gray-700 font-medium">Option 4</span>
-  </button>
-  <button className="flex items-center gap-2 px-16 py-5 text-lg font-semibold border-2 border-slate-400 rounded-3xl outline-none hover:cursor-pointe">
-    <img className="w-10 h-10 rounded-full" src="https://images.pexels.com/photos/6964470/pexels-photo-6964470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Icon 5" />
-    <span className="text-gray-700 font-medium">Option 5</span>
-  </button>
-  <button className="flex items-center gap-2 px-16 py-5 text-lg font-semibold border-2 border-slate-400 rounded-3xl outline-none hover:cursor-pointe">
-    <img className="w-10 h-10 rounded-full" src="https://images.pexels.com/photos/15770567/pexels-photo-15770567/free-photo-of-pink-tulips-in-bucket.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Icon 6" />
-    <span className="text-gray-700 font-medium">Option 5</span>
-  </button>
-</div>
-
+    <div className="grid grid-cols-3 gap-5">
+      {productsData[selectedCategory].map((product) => {
+        const randomRating = Math.floor(Math.random() * 3) + 3; // Random stars between 3 and 5
+        return (
+          <div key={product.id} className="border p-1 rounded-lg shadow-md flex flex-col items-center">
+            <img src={product.img} alt={product.name} className="w-full h-56 object-cover rounded-lg mb-2" />
+            <h3 className="text-lg font-semibold">{product.name}</h3>
+            <div className="flex items-center my-2">
+              {[...Array(5)].map((_, index) => (
+                <Star key={index} className={`h-5 w-5 ${index < randomRating ? "stroke-yellow-500" : "stroke-slate-300"}`} />
+              ))}
+            </div>
+            <div className="flex flex-row items-center">
+              <p className="text-black text-xl">{product.price}</p>
+              <button className="ml-3">
+                <ShoppingBasketIcon className="rounded-full p-1 h-10 w-10 bg-teal-500 hover:bg-teal-600 stroke-white" />
+              </button>
+            </div>
+          </div>
+        );
+      })}
     </div>
+  </div>
   );
 }

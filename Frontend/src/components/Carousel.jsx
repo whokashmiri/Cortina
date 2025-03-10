@@ -40,12 +40,12 @@ export default function Carousel() {
           <img className="rounded-2xl bg-center" src="https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg" alt="" />
         </div>
       </div>
-      <div className="flex gap-4 justify-center mt-6">
+      {/* <div className="flex gap-4 justify-center mt-6">
           <button className="bg-btn text-white px-9 py-4 rounded-full font-semibold transition duration-300 hover:bg-yellow-600 flex items-center">
             View Products
           </button>
          
-        </div>
+        </div> */}
     </div>
   );
 }

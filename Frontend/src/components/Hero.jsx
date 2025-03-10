@@ -27,6 +27,7 @@ export default function Hero() {
               <Star className="text-yellow-400 stroke-yellow-500 fill-yellow-500 mx-2" />
               AMAZING DEALS COMING SOON
             </span>
+            
           ))}
         </div>
       </div>

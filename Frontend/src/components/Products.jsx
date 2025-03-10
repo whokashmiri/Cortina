@@ -41,7 +41,7 @@ export default function Products() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {products.map((product) => (
             <div key={product.id} className="relative border rounded-lg shadow-md p-1 text-center overflow-hidden">
-              <img src={product.image} alt={product.name} className="w-full h-56 object-cover rounded-md" />
+              <img src={product.image} alt={product.name} className="w-full h-56 hover:scale-105 object-cover rounded-md" />
               
               {/* Favorite Button */}
               <div className="absolute top-2 right-2 flex items-center space-x-2 bg-btn hover:bg-teal-700 p-2 rounded-full shadow-md cursor-pointer">
