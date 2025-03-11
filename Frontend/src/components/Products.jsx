@@ -46,7 +46,6 @@ export default function Products() {
               {/* Favorite Button */}
               <div className="absolute top-2 right-2 flex items-center space-x-2 bg-btn hover:bg-teal-700 p-2 rounded-full shadow-md cursor-pointer">
                 <Heart className="stroke-red-500 w-5 h-5" />
-                <span className="text-sm font-medium text-white">Favorite</span>
               </div>
   
               <h2 className="text-sm font-semibold mt-2 px-2">{product.name}</h2>
