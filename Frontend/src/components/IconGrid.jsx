@@ -1,16 +1,16 @@
 /* eslint-disable react/prop-types */
-import { Combine, Diamond, ExpandIcon, ShoppingBasketIcon, Star } from "lucide-react";
+import { Combine, Diamond, ExpandIcon, ShoppingCart, Star } from "lucide-react";
 import { useState } from "react";
 
 const productsData = {
   BestSellers: [
-    { id: 1, name: "Product 1", description:"Mirror, 18x21 cm 10 pack (7 1/8x8 1/4  10 pack", price: "$50", img: "https://images.pexels.com/photos/4048672/pexels-photo-4048672.jpeg" },
-    { id: 2, name: "Product 2", price: "$60", img: "https://images.pexels.com/photos/8022977/pexels-photo-8022977.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-    { id: 3, name: "Product 3", price: "$70", img: "https://images.pexels.com/photos/30818059/pexels-photo-30818059/free-photo-of-two-people-sharing-gourmet-meal-at-cafe-table.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-    { id: 4, name: "Product 4", price: "$80", img: "https://images.pexels.com/photos/8290032/pexels-photo-8290032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-    { id: 5, name: "Product 5", price: "$90", img: "https://images.pexels.com/photos/30888208/pexels-photo-30888208/free-photo-of-cozy-morning-with-latte-art-and-newspaper.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-    { id: 6, name: "Product 6", price: "$100", img: "https://images.pexels.com/photos/30734874/pexels-photo-30734874/free-photo-of-charming-outdoor-restaurant-at-twilight.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-    { id: 7, name: "Product 7", price: "$110", img: "https://images.pexels.com/photos/30875287/pexels-photo-30875287/free-photo-of-dreamy-portrait-of-woman-with-abstract-colors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 1, name: "Odalis Decorative Bottle", description:"Mirror, 18x21 cm 10 pack (7 1/8x8 1/4  10 pack", price: "$50", img: "https://images.pexels.com/photos/4048672/pexels-photo-4048672.jpeg" },
+    { id: 2, name: "Pietro Decorative Bottle", price: "$60", img: "https://images.pexels.com/photos/8022977/pexels-photo-8022977.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 3, name: "Eloria Decorative Glass Vase", price: "$70", img: "https://images.pexels.com/photos/30818059/pexels-photo-30818059/free-photo-of-two-people-sharing-gourmet-meal-at-cafe-table.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 4, name: "Isidro Decorative Glass Bottle", price: "$80", img: "https://images.pexels.com/photos/8290032/pexels-photo-8290032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 5, name: "Luis Decorative Glass Vase - Big", price: "$90", img: "https://images.pexels.com/photos/30888208/pexels-photo-30888208/free-photo-of-cozy-morning-with-latte-art-and-newspaper.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 6, name: "Lía Decorative Glass Vase", price: "$100", img: "https://images.pexels.com/photos/30734874/pexels-photo-30734874/free-photo-of-charming-outdoor-restaurant-at-twilight.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    { id: 7, name: "Divan Gold Bathroom Accessories", price: "$110", img: "https://images.pexels.com/photos/30875287/pexels-photo-30875287/free-photo-of-dreamy-portrait-of-woman-with-abstract-colors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
   ],
   NewArrivals: [
     { id: 8, name: "New Item 1", price: "$40", img: "https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
@@ -51,20 +51,30 @@ export default function IconGrid() {
       {productsData[selectedCategory].map((product) => {
         const randomRating = Math.floor(Math.random() * 3) + 3; // Random stars between 3 and 5
         return (
-          <div key={product.id} className="border p-1 rounded-lg shadow-md flex flex-col items-center">
-            <img src={product.img} alt={product.name} className="w-full h-56 object-cover rounded-lg mb-2" />
-            <h3 className="text-lg font-semibold">{product.name}</h3>
-            <div className="flex items-center my-2">
+          <div key={product.id} className="border w-64 h-96 p-1 rounded-lg shadow-md flex flex-col items-center">
+            <img src={product.img} alt={product.name} className="w-full h-60 object-cover rounded-lg mb-1 hover:scale-105" />
+            <h3 className="text-sm font-semibold">{product.name}</h3>
+            <div className="flex items-center my-1">
+            <p>Reviews: </p>
               {[...Array(5)].map((_, index) => (
-                <Star key={index} className={`h-5 w-5 ${index < randomRating ? "stroke-yellow-500" : "stroke-slate-300"}`} />
+                <Star key={index} className={`h-3 w-3 ${index < randomRating ? "stroke-yellow-500" : "stroke-slate-300"}`} />
+              
               ))}
+              
             </div>
-            <div className="flex flex-row items-center">
-              <p className="text-black text-xl">{product.price}</p>
-              <button className="ml-3">
-                <ShoppingBasketIcon className="rounded-full p-1 h-10 w-10 bg-teal-500 hover:bg-teal-600 stroke-white" />
+            <div className="flex flex-row ">
+            <p className="text-black text-sm mr-6"> MRP: {product.price}</p>
+            <p className="text-slate-400 text-sm line-through"> MRP: {product.price}</p>
+            </div>
+            
+
+            <div className="flex w-full mt-3 bg-btn hover:bg-teal-700 items-center rounded-full">
+              <button className="flex items-center justify-center w-full text-lg px-4 py-2 text-white">
+                   <ShoppingCart className="w-6 h-full stroke-white text-semibold mr-2" />
+                       Add to Cart
               </button>
             </div>
+
           </div>
         );
       })}

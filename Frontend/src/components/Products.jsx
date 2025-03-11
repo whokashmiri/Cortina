@@ -37,7 +37,7 @@ export default function Products() {
   
     return (
       <div className="container mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-6 text-center">Our Products</h1>
+        <h1 className="text-4xl font-bold text-center m-12 text-gray-900">Exquisite Creations: <span className="text-teal-800 font-light">Luxury Meets Uniqueness</span> </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {products.map((product) => (
             <div key={product.id} className="relative border rounded-lg shadow-md p-1 text-center overflow-hidden">
@@ -49,11 +49,11 @@ export default function Products() {
                 <span className="text-sm font-medium text-white">Favorite</span>
               </div>
   
-              <h2 className="text-lg font-semibold mt-2 px-2">{product.name}</h2>
+              <h2 className="text-sm font-semibold mt-2 px-2">{product.name}</h2>
               
               <div className="flex justify-between items-center m-2">
                 <ShoppingCart className="cursor-pointer text-gray-500 hover:text-black" />
-                <p className="text-yellow-600 font-extrabold">${product.price}</p>
+                <p className="text-yellow-600 font-extrabold">Price: ${product.price}</p>
                 <Eye className="cursor-pointer text-gray-500 hover:text-black" onClick={() => openModal(product)} />
               </div>
             </div>

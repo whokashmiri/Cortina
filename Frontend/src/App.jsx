@@ -17,6 +17,7 @@ import  Quick  from "./components/Quick"
 // import Recliner from "./components/Recliner"
 import Sofa from "./components/Sofa"
 import  Tabs  from "./components/Tabs"
+import TagLine from "./components/TagLine"
 import Video from "./components/Video"
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 <>
 <div className="overflow-x-hidden scrollbar-hidden">
   <Quick/>
+  <TagLine/>
 <Navbar/>
 <Tabs/>
 <Hero/>

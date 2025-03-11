@@ -10,9 +10,12 @@ const Quick = () => {
       {/* Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-btn transition-all"
+        className="bg-teal-600 text-white h-20 p-3 rounded-sm shadow-lg hover:bg-btn transition-all"
       >
         {open ? <X size={24} className="stroke-white" /> : <PhoneCall size={24} className="stroke-white" />}
+        
+        
+
       </button>
 
       {/* Card */}

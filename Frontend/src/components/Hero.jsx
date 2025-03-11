@@ -25,7 +25,7 @@ export default function Hero() {
           {[...Array(20)].map((_, index) => (
             <span key={index} className="flex items-center text-btn text-lg font-semibold mx-4">
               <Star className="text-yellow-400 stroke-yellow-500 fill-yellow-500 mx-2" />
-              AMAZING DEALS COMING SOON
+              AMAZING DEALS COMING SOON <Star className="ml-3 stroke-yellow-500 fill-yellow-300"/> <span className="   ml-3"> 50 % OFF</span>
             </span>
             
           ))}

@@ -14,12 +14,18 @@ const Grid = () => {
     }, [])
   
   return (
-    <div className="flex h-[92vh] p-6 gap-4"> {/* Added gap-4 between main divs */}
+    <div className="  p-6">
+     <h2 className="text-4xl font-bold text-center m-12 text-gray-900">
+     Illuminated Spotlight:
+      <span className="text-teal-800 font-light"> Icons of Prestige & Influence </span>
+        
+      </h2>
+    <div className="flex h-[92vh]  gap-4"> {/* Added gap-4 between main divs */}
       {/* First Div (Same height as Second Div) */}
       <div className="h-full w-[35%]">
         <img
           src={Cushion}
-          alt="Main"
+          alt="Main" 
           className="h-full w-full object-cover rounded-lg"  data-aos="fade-right"
         />
       </div>
@@ -54,6 +60,7 @@ const Grid = () => {
           />
         </div>
       </div>
+    </div>
     </div>
   );
 };

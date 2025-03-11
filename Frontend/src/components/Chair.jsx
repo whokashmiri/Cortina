@@ -44,7 +44,7 @@ const Chair = () => {
   return (
     <div className="max-w-6xl mx-auto p-6">
       <h1 className="text-4xl font-bold text-center m-12 text-gray-900">
-      The Chairs of the Future: <span className="text-teal-800 font-light">Where Elegance Meets Innovation</span>
+      Chairs of the Future: <span className="text-teal-800 font-light">Elegance Meets Innovation</span>
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up">
         {products.map((product) => (
@@ -62,15 +62,18 @@ const Chair = () => {
               />
             )}
             {/* Overlay revealed on hover */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-black bg-opacity-60 flex flex-col justify-center p-4 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out">
+            <div className="absolute bottom-0 right-0 w-full h-32 bg-black bg-opacity-60 flex flex-col justify-center p-4 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out">
               <p className="text-white font-serif text-sm">{product.name}</p>
               <div className="flex items-center mt-2">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-5 h-5" color="#facc15" />
                 ))}
               </div>
-              <p className="mt-2 text-white font-bold">{product.price}</p>
-              <p className="text-gray-300 line-through">{product.oldPrice}</p>
+              <div className="flex flex-row">
+              <p className=" text-white font-bold">{product.price}</p>
+              <p className="ml-3 text-gray-300 line-through">{product.oldPrice}</p>
+              </div>
+              
             </div>
           </div>
         ))}
