@@ -6,7 +6,7 @@ import Carousel from "./components/Carousel"
 import Chair from "./components/Chair"
 import CortinaHome from "./components/CortinaHome"
 import Curtains from "./components/Curtains"
-// import Featured from "./components/Featured"
+import Featured from "./components/Featured"
 import Grid from "./components/Grid"
 import Hero from "./components/Hero"
 import IconGrid from "./components/IconGrid"
@@ -45,7 +45,7 @@ function App() {
 
 <Grid/>
 {/* <Recliner/> */}
-{/* <Featured/> */}
+<Featured/>
 <Brands/>
 
 <CortinaHome/>

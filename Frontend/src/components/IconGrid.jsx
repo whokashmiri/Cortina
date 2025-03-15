@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Combine, Diamond, ExpandIcon, Heart, ShoppingCart } from "lucide-react";
+import { Combine, Diamond, ExpandIcon,  Star } from "lucide-react";
 import { useState } from "react";
 
 const productsData = {
@@ -30,6 +30,11 @@ const productsData = {
   ],
 };
 
+const getRandomColor = (index) => {
+  const colors = ["#255F38", "#205781", "#57B4BA", "#FA7070", "#625020", "#0c35"]; // Define different colors
+  return colors[index % colors.length]; // Cycle through colors to avoid repetition
+};
+
 export default function IconGrid() {
   const [selectedCategory, setSelectedCategory] = useState("BestSellers");
 
@@ -46,31 +51,69 @@ export default function IconGrid() {
         <ExpandIcon className="text-yellow-400 stroke-yellow-500" /> Exclusive
       </button>
     </div>
-    <div className="flex flex-col items-center justify-center gap-8 pl-8 pr-8 bg-gray-100">
-     
+
+
+    <div className="flex flex-col items-center justify-center gap-8 px-8 bg-gray-100">
       <div className="grid grid-cols-3 gap-5">
-        {productsData[selectedCategory].map((product) => (
-          <div key={product.id} className="relative border w-64 h-80 p-1 rounded-lg shadow-md overflow-hidden group">
-            <img
-              src={product.img}
-              alt={product.name}
-              className="w-full h-60 object-cover rounded-lg  transition-all"
-            />
-            <h1 className="text-sm font-semibold  mt-2">{product.name}</h1> 
-            <div className="flex flex-row ">
-            <p className=" text-sm mr-6 text-yellow-400"> MRP: {product.price}</p>
-            <p className="text-slate-400 text-sm line-through"> MRP: {product.price}</p>
+        {productsData[selectedCategory].map((product, index) => {
+          const topColor = getRandomColor(index); // Ensure unique colors
+
+          return (
+            <div
+              key={product.id}
+              className="relative border w-64 h-80 p-4 rounded-lg shadow-md overflow-hidden group bg-white"
+            >
+              {/* Rotated Top Half Background */}
+              <div
+                className="absolute top-0 left-0 w-screen h-1/2 transform rotate-[-10deg] origin-bottom-left"
+                style={{ backgroundColor: topColor }}
+              ></div>
+
+              {/* Circular Image on Top Right */}
+              <img
+                src={product.img}
+                alt={product.name}
+                className="absolute mt-7 top-10 right-8 w-52 h-52 object-cover rounded-full border-2 border-white shadow-md"
+              />
+
+              {/* Title and Price on Top Left */}
+              <div className="absolute top-4 left-4 text-white z-10">
+                <h1 className="text-sm px-2 rounded-3xl shadow-lg bg-black text-white font-semibold">{product.name}</h1>
+                <div className="flex flex-row">
+                  <p className="text-sm mr-2 text-yellow-300 font-semibold">₹{product.price}</p>
+               
+                </div>
+              </div>
+
+              {/* Review & Add to Cart at Bottom */}
+              <div className="absolute bottom-2 left-2 flex items-center gap-1">
+                <Star className="w-4 h-4 text-yellow-400" />
+                <p className="text-sm text-gray-800">4.5</p>
+              </div>
+
+              <button className="absolute bottom-2 right-2 bg-btn text-white px-4 py-2 text-xs font-semibold rounded-3xl shadow-md hover:bg-teal-600 transition">
+                Add to Cart
+              </button>
+
+            
             </div>
-
-            {/* Heart Icon (on hover) */}
-            <Heart className="absolute top-4  right-4 w-6 h-6 text-white opacity-0 group-hover:opacity-100 cursor-pointer transition-all" />
-
-            {/* Cart Icon (on hover) */}
-            <ShoppingCart className="absolute top-4 left-4 w-6 h-6 text-white opacity-0 group-hover:opacity-100 cursor-pointer transition-all" />
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
   );
 }

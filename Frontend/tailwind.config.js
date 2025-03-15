@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      clipPath: {
+        custom: "polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%)",
+      },
       animation: {
         marquee: "marquee 10s linear infinite",
       },
