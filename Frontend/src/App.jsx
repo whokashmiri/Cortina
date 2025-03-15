@@ -1,5 +1,6 @@
 import Banner from "./components/Banner"
 import Banner2 from "./components/Banner2"
+import Banner3 from "./components/Banner3"
 import Brands from "./components/Brands"
 // import CardGrid from "./components/CardGrid"
 import Carousel from "./components/Carousel"
@@ -14,11 +15,12 @@ import Luggage from "./components/Luggage"
 import Navbar from "./components/Navbar"
 import Products from "./components/Products"
 import  Quick  from "./components/Quick"
-// import Recliner from "./components/Recliner"
+import Recliner from "./components/Recliner"
 import Sofa from "./components/Sofa"
 import  Tabs  from "./components/Tabs"
 import TagLine from "./components/TagLine"
 import Video from "./components/Video"
+import Arrow from "./components/Arrow"
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
 <div className="overflow-x-hidden scrollbar-hidden">
   <Quick/>
   <TagLine/>
+  <Arrow/>
 <Navbar/>
 <Tabs/>
 <Hero/>
@@ -44,7 +47,8 @@ function App() {
 <Sofa/>
 
 <Grid/>
-{/* <Recliner/> */}
+<Recliner/>
+<Banner3/>
 <Featured/>
 <Brands/>
 

@@ -84,7 +84,7 @@ export default function Featured() {
               style={{ backgroundImage: `url(${card.image})` }}
             >
               {/* Premium Tag */}
-              <div className="absolute flex flex-row top-3 left-3 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black text-xs font-semibold px-3 py-2 rounded-lg shadow-lg">
+              <div className="absolute flex flex-row top-3 left-3 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black text-xs font-semibold px-3 py-2 rounded-lg shadow-lg" data-aos="fade-down">
                 <Crown className="text-black mr-2" size={14} />
                 <span className="text-black">Premium</span>
               </div>
@@ -94,20 +94,20 @@ export default function Featured() {
                 className="absolute inset-0  flex flex-col justify-end p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               >
                 {/* Price Tag */}
-                <div className="bg-gradient-to-r w-fit from-btn to-teal-700 text-white font-semibold text-sm text-center py-2 px-6 rounded-lg shadow-lg mb-3">
-                  Price: {card.price}
+                <div className="bg-gradient-to-r w-fit from-btn to-teal-700 text-white font-semibold text-sm text-center py-2 px-6 rounded-3xl shadow-lg  hover:from-yellow-600 hover:to-yellow-800  transition-all duration-500 ease-in-out transform hover:scale-105 mb-3">
+                  Price : $ {card.price}
                 </div>
 
                 {/* Add to Cart Button */}
                 <button
-                  className="relative flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-yellow-700 text-black font-medium py-3 px-8 rounded-xl shadow-lg hover:from-yellow-600 hover:to-yellow-800 hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:scale-105"
+                  className="relative w-fit flex items-center gap-1 bg-gradient-to-r from-btn to-teal-700 text-white  py-1 px-3 rounded-3xl shadow-lg hover:from-yellow-600 hover:to-yellow-800 hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:scale-105"
                 >
                   <motion.span
                     className="bg-white text-gray-900 p-2 rounded-full shadow-md"
                     whileHover={{ y: -3, rotate: -10 }}
                     transition={{ type: "spring", stiffness: 200 }}
                   >
-                    <ShoppingCart className="w-5 h-5" />
+                    <ShoppingCart className="w-3 h-3" />
                   </motion.span>
                   Add To Cart
                 </button>
