@@ -1,17 +1,17 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import C1 from "../assets/Cr1.webp";
 import C2 from "../assets/Cr2.webp";
 import C3 from "../assets/Cr3.webp";
+import C4 from "../assets/Cr4.webp";
 import C5 from "../assets/Cr5.webp";
 import C6 from "../assets/Cr6.webp";
 
-const brandIcons = [C1, C2, C3, C5, C6];
+const brandIcons = [C1, C2, C3 ,C4 , C5, C6];
 
 const Brands = () => {
-  const sliderRef = useRef(null);
-  const keenSlider = useKeenSlider({
+  const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
     slides: { perView: 3, spacing: 20 },
     breakpoints: {
@@ -26,15 +26,14 @@ const Brands = () => {
 
   // Auto-play effect
   useEffect(() => {
-    const slider = keenSlider[0];
-    if (!slider) return;
+    if (!instanceRef.current) return;
 
     let interval = setInterval(() => {
-      slider.next(); // Move to next slide automatically
+      instanceRef.current.next(); // Move to next slide automatically
     }, 2000); // Change slide every 2 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, [keenSlider]);
+  }, [instanceRef]);
 
   return (
     <div className="py-10 bg-gray-100 flex flex-col items-center">

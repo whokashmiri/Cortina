@@ -10,7 +10,7 @@ const productsData = {
     { id: 4, name: "Isidro Decorative Glass Bottle", price: "$80", img: "https://images.pexels.com/photos/8290032/pexels-photo-8290032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
     { id: 5, name: "Luis Decorative Glass Vase - Big", price: "$90", img: "https://images.pexels.com/photos/30888208/pexels-photo-30888208/free-photo-of-cozy-morning-with-latte-art-and-newspaper.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
     { id: 6, name: "Lía Decorative Glass Vase", price: "$100", img: "https://images.pexels.com/photos/30734874/pexels-photo-30734874/free-photo-of-charming-outdoor-restaurant-at-twilight.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-    { id: 7, name: "Divan Gold Bathroom Accessories", price: "$110", img: "https://images.pexels.com/photos/30875287/pexels-photo-30875287/free-photo-of-dreamy-portrait-of-woman-with-abstract-colors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+    // { id: 7, name: "Divan Gold Bathroom Accessories", price: "$110", img: "https://images.pexels.com/photos/30875287/pexels-photo-30875287/free-photo-of-dreamy-portrait-of-woman-with-abstract-colors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
   ],
   NewArrivals: [
     { id: 8, name: "New Item 1", price: "$40", img: "https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
