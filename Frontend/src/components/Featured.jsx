@@ -74,55 +74,49 @@ export default function Featured() {
         {cards.map((card, index) => (
           <motion.div
             key={index}
-            className="relative group overflow-hidden rounded-xl shadow-xl cursor-pointer"
-            whileHover={{ scale: 1.01 }}
-            transition={{ duration: 0.3 }}
+            className="relative group overflow-hidden rounded-xl shadow-2xl cursor-pointer bg-gradient-to-b from-indigo-900 to-indigo-700"
+            whileHover={{ scale: 1.03 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
           >
             {/* Background Image */}
             <div
-              className="h-96 bg-cover bg-center relative transition-transform duration-300 rounded-xl"
+              className="h-96 bg-cover bg-center relative rounded-xl transition-transform duration-500"
               style={{ backgroundImage: `url(${card.image})` }}
             >
               {/* Premium Tag */}
-              <div className="absolute flex flex-row top-3 left-3 bg-yellow-300 text-black text-xs font-semibold p-2  rounded-lg" data-aos="fade-down">
-                <h1 className=""> Premium</h1> <Crown className="ml-2 "  size={14}/>
+              <div className="absolute flex flex-row top-3 left-3 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black text-xs font-semibold px-3 py-2 rounded-lg shadow-lg">
+                <Crown className="text-black mr-2" size={14} />
+                <span className="text-black">Premium</span>
               </div>
-              
 
-              {/* Overlay for readability */}
-              <div className="absolute inset-0  flex flex-col justify-end clip-custom text-white  duration-300">
-                <div className="bg-white w-full rounded-r-2xl text-center p-2 " 
-                  style={{ clipPath: "polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%)" }}
-
-                >
-                <p className="text-lg rounded-r-2xl  text-black font-semibold w-fit  "> ${card.price}</p>
+              {/* Dark Overlay + Content (Shown on Hover) */}
+              <motion.div
+                className="absolute inset-0  flex flex-col justify-end p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              >
+                {/* Price Tag */}
+                <div className="bg-gradient-to-r w-fit from-btn to-teal-700 text-white font-semibold text-sm text-center py-2 px-6 rounded-lg shadow-lg mb-3">
+                  Price: {card.price}
                 </div>
-                
-                <button 
-  className="relative m-3 flex items-center gap-3 bg-gradient-to-r from-gray-900 to-gray-700 text-white font-medium py-3 px-8 rounded-l-full rounded-r-xl shadow-lg hover:from-gray-700 hover:to-gray-500 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105"
-  style={{ clipPath: "polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%)" }}
->
-  {/* Animated Cart Icon */}
-  <motion.span 
-    className="bg-white text-gray-900 p-2 rounded-full shadow-md"
-    whileHover={{ y: -3, rotate: -10 }}
-    transition={{ type: "spring", stiffness: 200 }}
-  >
-    <ShoppingCart className="w-5 h-5" />
-  </motion.span>
-  Add To Cart
-</button>
 
-
-
-
-              </div>
+                {/* Add to Cart Button */}
+                <button
+                  className="relative flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-yellow-700 text-black font-medium py-3 px-8 rounded-xl shadow-lg hover:from-yellow-600 hover:to-yellow-800 hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:scale-105"
+                >
+                  <motion.span
+                    className="bg-white text-gray-900 p-2 rounded-full shadow-md"
+                    whileHover={{ y: -3, rotate: -10 }}
+                    transition={{ type: "spring", stiffness: 200 }}
+                  >
+                    <ShoppingCart className="w-5 h-5" />
+                  </motion.span>
+                  Add To Cart
+                </button>
+              </motion.div>
             </div>
           </motion.div>
         ))}
       </div>
     </div>
-
       <div className="flex gap-4 justify-center mt-6">
         <button className="bg-btn text-white px-9 py-4 rounded-full font-semibold transition duration-300 hover:bg-yellow-600 flex items-center">
           View Products
