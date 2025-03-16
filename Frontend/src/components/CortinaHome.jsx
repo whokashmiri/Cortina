@@ -6,6 +6,9 @@ const CortinaHome = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+  let date = new Date()
+  let year = date.getFullYear()
+  
 
   return (
     <div className="bg-gray-100  text-gray-800 p-6 md:p-12 flex flex-col  lg:flex-col justify-between items-start">
@@ -53,7 +56,7 @@ const CortinaHome = () => {
       {/* Footer Section - Placed Below */}
       <div className="w-full flex flex-row justify-between text-center mt-12 border-t pt-6">
         <p className="text-gray-700 text-sm">
-          &copy; 2025 LuxKash LLP. All rights reserved.
+          &copy; {year} LuxKash LLP. All rights reserved.
         </p>
         <div className="flex justify-center gap-4 text-sm">
           <a href="#" className="text-gray-700 hover:text-gray-900">Privacy Policy</a>
