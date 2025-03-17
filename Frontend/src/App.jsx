@@ -12,13 +12,13 @@ import Grid from "./components/Grid"
 import Hero from "./components/Hero"
 import IconGrid from "./components/IconGrid"
 import Luggage from "./components/Luggage"
-import Navbar from "./components/Navbar"
+// import Navbar from "./components/Navbar"
 import Products from "./components/Products"
 import  Quick  from "./components/Quick"
 import Recliner from "./components/Recliner"
 import Sofa from "./components/Sofa"
 import  Tabs  from "./components/Tabs"
-import TagLine from "./components/TagLine"
+// import TagLine from "./components/TagLine"
 import Video from "./components/Video"
 import Arrow from "./components/Arrow"
 
@@ -27,9 +27,9 @@ function App() {
 <>
 <div className="overflow-x-hidden scrollbar-hidden">
   <Quick/>
-  <TagLine/>
+  {/* <TagLine/> */}
   <Arrow/>
-<Navbar/>
+{/* <Navbar/> */}
 <Tabs/>
 <Hero/>
 <IconGrid/>
