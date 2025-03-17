@@ -1,6 +1,6 @@
 import homeG from "../assets/homeG.webp"
 import homeG2 from "../assets/HomeG2.webp"
-import homeG3 from "../assets/homeG3.webp"
+import homeG3 from "../assets/HomeG3.webp"
 import {useEffect} from "react";
 
 import AOS from 'aos';
