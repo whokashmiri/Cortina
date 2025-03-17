@@ -48,8 +48,7 @@ export default function Header() {
   return (
     <>
       {/* Tagline Section */}
-      <div className="w-full fixed top-0 left-0 bg-yellow-400 px-4 sm:px-6 py-2 sm:py-3 z-50 flex flex-wrap justify-between items-center text-sm sm:text-lg">
-        {/* Animated Tagline */}
+      <div className="w-full fixed top-0 left-0 bg-yellow-400 px-4 sm:px-6 py-2 sm:py-3 z-50 flex flex-wrap justify-center sm:justify-between items-center text-sm sm:text-lg text-center">
         <div className="flex items-center justify-center min-w-[250px] sm:min-w-[300px]">
           <h1 className="mr-2 font-bold">*</h1>
           <h1 className="text-black text-center transition-opacity duration-500">
@@ -57,24 +56,26 @@ export default function Header() {
           </h1>
           <h1 className="ml-2 font-bold">*</h1>
         </div>
-        {/* Static Text */}
-        <h1 className="text-xs sm:text-lg font-semibold animate-pulse">
-          WE ARE AVAILABLE FOR YOU: 98765412132
-        </h1>
+
+        <div className="w-full sm:w-auto text-center">
+          <h1 className="text-xs sm:text-lg font-semibold animate-pulse">
+            WE ARE AVAILABLE FOR YOU: 98765412132
+          </h1>
+        </div>
       </div>
 
       {/* Navbar Section */}
-      <nav className="fixed top-[48px] sm:top-[64px] left-0 w-full bg-white z-40 text-black sm:p-4 flex items-center justify-between">
+      <nav className="fixed top-[40px] sm:top-[50px] left-0 w-full bg-white z-40 text-black flex items-center justify-between mt-3 lg:mt-0 py-2 sm:py-3">
         {/* Icons Section */}
         <div className="flex items-center gap-2 sm:gap-4 pl-3 sm:pl-7">
-          <ShoppingCart className="cursor-pointer text-primary hover:text-black transition-all duration-300" size={18} sm:size={20} />
-          <User className="cursor-pointer text-primary hover:text-black transition-all duration-300" size={18} sm:size={20} />
+          <ShoppingCart className="cursor-pointer text-primary hover:text-black transition-all duration-300" size={18} />
+          <User className="cursor-pointer text-primary hover:text-black transition-all duration-300" size={18} />
         </div>
 
         {/* Logo Section */}
         <div className="flex flex-row items-center">
-          <img className="h-12 sm:h-16" src={logo} alt="Logo" />
-          <h1 className="text-2xl sm:text-4xl font-thin text-btn mt-1 sm:mt-2">LuxKash</h1>
+          <img className="h-10 sm:h-12" src={logo} alt="Logo" />
+          <h1 className="text-xl sm:text-2xl font-thin text-btn mt-1 sm:mt-2">LuxKash</h1>
         </div>
 
         {/* Search Bar */}
@@ -84,17 +85,16 @@ export default function Header() {
             placeholder="Search..."
             className="w-full text-black px-3 py-1 sm:py-2 pl-8 rounded-full border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
           />
-          <Search className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400" size={14} sm:size={18} />
+          <Search className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400" size={14} />
         </div>
       </nav>
 
       {/* Tabs Section */}
-      <div className="fixed top-[96px] sm:top-[80px] left-0 w-full bg-white px-4 sm:px-6 py-2 z-30 mt-5 flex items-center justify-between">
+      <div className="fixed top-[80px] sm:top-[90px] left-0 w-full bg-white px-4 sm:px-6 py-2 z-30 mt-4">
         {/* Mobile Dropdown */}
         <div className="sm:hidden">
           <button onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="flex items-center gap-2 text-black font-semibold">
             <Menu size={22} />
-            <span>Categories</span>
           </button>
           <AnimatePresence>
             {isDropdownOpen && (
@@ -118,24 +118,24 @@ export default function Header() {
           </AnimatePresence>
         </div>
 
-        <div className="hidden sm:flex gap-4 sm:pt-16 md:pt-15 ">
-  {tabs.map((tab) => (
-    <button
-      key={tab}
-      onClick={() => handleTabClick(tab)}
-      className={`px-3 py-2 text-black font-semibold transition-all duration-300 relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 ${
-        activeTab === tab ? "after:w-full text-black" : "after:w-0 hover:after:w-full text-gray-700"
-      }`}
-    >
-      {tab}
-    </button>
-  ))}
-</div>
-
+        {/* Desktop Tabs */}
+        <div className="hidden sm:flex gap-4 justify-center">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => handleTabClick(tab)}
+              className={`px-3 py-2 text-black font-semibold transition-all duration-300 relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 ${
+                activeTab === tab ? "after:w-full text-black" : "after:w-0 hover:after:w-full text-gray-700"
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Fixing Content Behind Navbar */}
-      <div className="pt-[144px] sm:pt-[120px]"></div>
+      <div className="pt-[120px] sm:pt-[130px]"></div>
     </>
   );
 }
