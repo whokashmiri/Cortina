@@ -49,15 +49,15 @@ const Luggage = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto p-6 mt-10">
-      <h1 className="text-4xl  text-center mb-8 text-gray-900">The Sale Of <span className="text-teal-800 font-light">Dreams</span></h1>
+    <div className="max-w-6xl mx-auto p-6 mt-7">
+      <h1 className="text-3xl md:text-4xl font-bold text-center lg:m-10 m-4 text-gray-900">The Sale Of <span className="text-teal-800 font-light">Dreams</span></h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {products.map((product) => (
           <div key={product.id} className="border rounded-lg p-2 shadow-lg" data-aos="fade-up">
             <img
               src={product.image}
               alt=""
-              className="w-full h-72 object-cover rounded-md"
+              className="w-full h-full object-cover rounded-md"
             />
           
           </div>

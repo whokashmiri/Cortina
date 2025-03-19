@@ -63,7 +63,7 @@ export default function Featured() {
     }, []);
   return (
     <div className="">
-      <h1 className="text-4xl font-bold text-center m-12 text-gray-900">
+      <h1 className="text-3xl md:text-4xl font-bold text-center lg:m-10 m-4">
         The Premium Products: <span className="text-teal-800 font-light">Exquisite Luxury Collection
 
 </span>

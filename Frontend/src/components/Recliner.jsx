@@ -1,4 +1,3 @@
-import { Star } from "lucide-react";
 import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -53,7 +52,7 @@ const Recliner = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-6">
-   <h1 className="text-4xl font-bold text-center m-12 text-gray-900">
+   <h1 className="text-3xl md:text-4xl font-bold text-center lg:m-10 m-4 text-gray-900">
   Exquisite Videos: <span className="text-teal-800 font-light">Curated from Our Instagram</span>
 </h1>
 

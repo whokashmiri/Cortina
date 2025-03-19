@@ -37,7 +37,7 @@ const Brands = () => {
 
   return (
     <div className="py-10 bg-gray-100 flex flex-col items-center">
-      <h2 className="text-4xl font-bold text-center m-12 text-gray-900 uppercase tracking-wide">
+      <h2 className="text-3xl md:text-4xl font-bold text-center lg:m-10 m-4 uppercase">
         Prestigious Partners: A Legacy of Trust & Excellence
       </h2>
       <p className="text-lg text-gray-700 mb-8 max-w-2xl text-center">
