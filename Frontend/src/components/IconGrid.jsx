@@ -53,43 +53,44 @@ export default function IconGrid() {
         </button>
       </div>
 
-      {/* Product Grid */}
-      <div className="flex flex-col items-center justify-center gap-8  bg-gray-100">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          {productsData[selectedCategory].map((product, index) => {
-            const topColor = getRandomColor(index);
-            return (
-              <div
-                key={product.id}
-                className="relative border w-96 lg:w-80 h-96 lg:pl-6 lg:pr-6 pl-4 pr-4  rounded-lg shadow-md overflow-hidden bg-white"
-              >
-                <div
-                  className="absolute top-0 left-0 w-screen h-1/2 transform rotate-[-10deg] origin-bottom-left"
-                  style={{ backgroundColor: topColor }}
-                ></div>
-                <img
-                  src={product.img}
-                  alt={product.name}
-                  className="absolute mt-7 top-10 right-12 w-52 h-60 object-cover rounded-full border-2 border-white shadow-md"
-                />
-                <div className="absolute top-4 left-4 text-white z-10">
-                  <h1 className="text-sm px-2 rounded-3xl shadow-lg bg-black text-white font-semibold">{product.name}</h1>
-                  <div className="flex flex-row">
-                    <p className="text-sm mr-2 text-yellow-300 font-semibold">₹{product.price}</p>
-                  </div>
-                </div>
-                <div className="absolute bottom-2 left-2 flex items-center gap-1">
-                  <Star className="w-4 h-4 text-yellow-400" />
-                  <p className="text-sm text-gray-800">4.5</p>
-                </div>
-                <button className="absolute bottom-2 right-2 bg-btn text-white px-4 py-2 text-xs font-semibold rounded-3xl shadow-md hover:bg-teal-600 transition">
-                  Add to Cart
-                </button>
-              </div>
-            );
-          })}
+     {/* Product Grid */}
+<div className="flex flex-col items-center justify-center gap-8 bg-gray-100">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    {productsData[selectedCategory].map((product, index) => {
+      const topColor = getRandomColor(index);
+      return (
+        <div
+          key={product.id}
+          className="relative border w-80 md:w-72 lg:w-80 h-96 pl-4 pr-4 rounded-lg shadow-md overflow-hidden bg-white"
+        >
+          <div
+            className="absolute top-0 left-0 w-screen h-1/2 transform rotate-[-10deg] origin-bottom-left"
+            style={{ backgroundColor: topColor }}
+          ></div>
+          <img
+            src={product.img}
+            alt={product.name}
+            className="absolute mt-7 top-10 right-12 w-52 h-60 object-cover rounded-full border-2 border-white shadow-md"
+          />
+          <div className="absolute top-4 left-4 text-white z-10">
+            <h1 className="text-sm px-2 rounded-3xl shadow-lg bg-black text-white font-semibold">{product.name}</h1>
+            <div className="flex flex-row">
+              <p className="text-sm mr-2 text-yellow-300 font-semibold">₹{product.price}</p>
+            </div>
+          </div>
+          <div className="absolute bottom-2 left-2 flex items-center gap-1">
+            <Star className="w-4 h-4 text-yellow-400" />
+            <p className="text-sm text-gray-800">4.5</p>
+          </div>
+          <button className="absolute bottom-2 right-2 bg-btn text-white px-4 py-2 text-xs font-semibold rounded-3xl shadow-md hover:bg-teal-600 transition">
+            Add to Cart
+          </button>
         </div>
-      </div>
+      );
+    })}
+  </div>
+</div>
+
     </div>
   );
 }
