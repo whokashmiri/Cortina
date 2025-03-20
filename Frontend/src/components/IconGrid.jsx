@@ -39,7 +39,7 @@ export default function IconGrid() {
   const [selectedCategory, setSelectedCategory] = useState("BestSellers");
 
   return (
-    <div className="flex flex-col items-center justify-center gap-8 pt-7 bg-gray-100">
+    <div className="flex flex-col items-center justify-center gap-8 pt-7 ">
       {/* Category Buttons */}
       <div className="flex flex-wrap gap-4 justify-center">
         <button className={`flex items-center gap-2 px-6 py-2 text-base md:px-8 md:py-3 md:text-lg font-semibold border-2 rounded-full ${selectedCategory === "BestSellers" ? "bg-black text-white" : "border-black"}`} onClick={() => setSelectedCategory("BestSellers")}>
@@ -53,18 +53,18 @@ export default function IconGrid() {
         </button>
       </div>
 
-     {/* Product Grid */}
-<div className="flex flex-col items-center justify-center gap-8 bg-gray-100">
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {/* Product Grid */}
+      <div className="flex flex-col items-center justify-center ">
+  <div className="grid justify-center items-center  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 w-screen pl-4 pr-4">
     {productsData[selectedCategory].map((product, index) => {
       const topColor = getRandomColor(index);
       return (
         <div
           key={product.id}
-          className="relative border w-80 md:w-72 lg:w-80 h-96 pl-4 pr-4 rounded-lg shadow-md overflow-hidden bg-white"
+          className="relative border h-96 w-full max-w-full px-4 py-4 rounded-lg shadow-md overflow-hidden bg-white"
         >
           <div
-            className="absolute top-0 left-0 w-screen h-1/2 transform rotate-[-10deg] origin-bottom-left"
+            className="absolute top-0 left-0 w-full h-1/2 transform rotate-[-10deg] origin-bottom-left"
             style={{ backgroundColor: topColor }}
           ></div>
           <img
@@ -89,7 +89,8 @@ export default function IconGrid() {
       );
     })}
   </div>
-</div>
+      </div>
+
 
     </div>
   );

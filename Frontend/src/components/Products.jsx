@@ -37,7 +37,7 @@ export default function Products() {
   
     return (
       <div className="container mx-auto pt-7">
-        <h1 className="text-3xl md:text-4xl font-bold text-center lg:m-10 m-4 text-gray-900 text-gray-900">Exquisite Creations: <span className="text-teal-800 font-light">Luxury Meets Uniqueness</span> </h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-center lg:m-10 m-4  text-gray-900">Exquisite Creations: <span className="text-teal-800 font-light">Luxury Meets Uniqueness</span> </h1>
         <div className="lg:pl-8 lg:pr-8 pl-4 pr-4  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {products.map((product) => (
             <div key={product.id} className="relative border rounded-lg shadow-md p-1 text-center overflow-hidden">
