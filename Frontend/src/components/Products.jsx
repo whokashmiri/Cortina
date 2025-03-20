@@ -65,19 +65,22 @@ export default function Products() {
               <button className="absolute top-4 right-4 text-yellow-600 hover:text-yellow-300" onClick={closeModal}>
                 <X className="w-6 h-6 stroke-yellow-600 hover:stroke-yellow-800" />
               </button>
-              <div className="flex  flex-col md:flex-row">
-                <img src={selectedProduct.image} alt={selectedProduct.name} className="w-full md:w-1/2 h-72 object-cover rounded-md " />
-                <div className="md:ml-6 mt-4 md:mt-0">
-                  <h2 className="text-xl mt-6 font-semibold">{selectedProduct.name}</h2>
-                  <p className="text-lg text-yellow-600 font-bold mt-2">Price: ${selectedProduct.price}</p>
+              <div className="flex  flex-row md:flex-row">
+                <img src={selectedProduct.image} alt={selectedProduct.name} className="w-1/2 md:w-1/2 h-72 object-cover rounded-md " />
+                <div className="md:ml-6 mt-2 ml-2 md:mt-0 ">
+                  <h2 className="text-sm mt-6 font-semibold">{selectedProduct.name}</h2>
+                  <p className="text-3xl text-yellow-600 font-bold mt-2"> <span className="text-sm mr-1">$</span>{selectedProduct.price}</p>
                   
-                  <div className="flex items-center mt-4">
-                    <button className="text-2xl" onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</button>
-                    <span className="px-4 text-lg">{quantity}</span>
-                    <button className="text-2xl" onClick={() => setQuantity(quantity + 1)}>+</button>
+                  <div className="flex items-center mt-4 ">
+                    <button className="text-4xl border-2 px-2 rounded-2xl border-double border-black" onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</button>
+                    <span className="px-4 text-xl">{quantity}</span>
+                    <button className="text-4xl px-2 rounded-2xl border-black border-2 border-double" onClick={() => setQuantity(quantity + 1)}>+</button>
                   </div>
                   
-                  <ShoppingBasket className="mt-4 h-10 w-10 p-2 bg-blue-500 rounded-full hover:bg-green-600 text-white cursor-pointer" />
+                  <div className="flex justify-end items-end bg-gray-300 ">
+                  <ShoppingCart className=" bg-btn p-3 stroke-white h-12 w-12 rounded-xl  text-white cursor-pointer" />
+                  </div>
+                  
                 </div>
               </div>
             </div>
