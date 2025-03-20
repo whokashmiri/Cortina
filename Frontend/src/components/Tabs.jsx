@@ -7,10 +7,9 @@ import logo from "../assets/cortinalogo.png";
 const tabs = [
   "HOME",
   "CURTAINS",
-  "SOFA COVER",
-  "DINING CHAIR COVER",
-  "RECLINER COVER",
-  "TRAVEL ACC",
+  "SOFA",
+  "CHAIR",
+  "RECLINER ",
   "BESTSELLERS",
 ];
 
@@ -118,20 +117,20 @@ export default function Header() {
           </AnimatePresence>
         </div>
 
-        {/* Desktop Tabs */}
-        <div className="hidden sm:flex gap-4 justify-center">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => handleTabClick(tab)}
-              className={`px-3 py-2 text-black font-semibold transition-all duration-300 relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 ${
-                activeTab === tab ? "after:w-full text-black" : "after:w-0 hover:after:w-full text-gray-700"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
+         {/* Desktop Tabs */}
+      <div className="hidden sm:flex gap-4 md:mt-4 justify-center">
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            onClick={() => handleTabClick(tab)}
+            className={`px-3 py-2  text-black  font-semibold transition-all duration-300 relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 ${
+              activeTab === tab ? "after:w-full text-black" : "after:w-0 hover:after:w-full text-gray-700"
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
       </div>
 
       {/* Fixing Content Behind Navbar */}
