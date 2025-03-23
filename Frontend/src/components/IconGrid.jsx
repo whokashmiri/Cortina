@@ -55,7 +55,7 @@ export default function IconGrid() {
 
       {/* Product Grid */}
       <div className="flex flex-col items-center justify-center ">
-  <div className="grid justify-center items-center  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 w-screen lg:px-8 lg:py-8 pl-4 pr-4">
+  <div className="grid justify-center items-center  grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 w-screen lg:px-8 lg:py-8 pl-4 pr-4">
     {productsData[selectedCategory].map((product, index) => {
       const topColor = getRandomColor(index);
       return (
@@ -70,7 +70,7 @@ export default function IconGrid() {
           <img
             src={product.img}
             alt={product.name}
-            className="absolute mt-7 top-10 right-12 w-60 h-60 object-cover rounded-full border-2 border-white shadow-md"
+            className="absolute mt-7 top-10 right-6 w-60 h-60 object-cover rounded-2xl border-2 border-white shadow-md"
           />
           <div className="absolute top-4 left-4 text-white z-10">
             <h1 className="text-sm px-2 rounded-3xl shadow-lg bg-black text-white font-semibold">{product.name}</h1>

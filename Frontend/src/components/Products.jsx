@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Eye, Heart, ShoppingBasket,  ShoppingCart,  X } from "lucide-react";
+import { Eye, Heart,  ShoppingCart,  X } from "lucide-react";
 
 const products = [
    { id: 1, name: "Corsica Daiko Polyresin Bird Figurine", price: 20, image: "https://images.pexels.com/photos/3148596/pexels-photo-3148596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },

@@ -21,6 +21,8 @@ import  Tabs  from "./components/Tabs"
 // import TagLine from "./components/TagLine"
 import Video from "./components/Video"
 import Arrow from "./components/Arrow"
+import Banner4 from "./components/Banner4"
+import Banner5 from "./components/Banner5"
 
 function App() {
   return (
@@ -33,10 +35,12 @@ function App() {
 <Tabs/>
 <Hero/>
 <IconGrid/>
+<Banner4/>
 <Video/>
 
 <Products/>
 {/* <CardGrid/> */}
+<Banner5/>
 <Luggage/>
 <Carousel/>
 <Chair/>
